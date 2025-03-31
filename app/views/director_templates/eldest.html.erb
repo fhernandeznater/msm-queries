@@ -1,0 +1,5 @@
+<h1>Eldest director</h1>
+
+<% eldest_director = Director.where.not({ :dob => nil }).order({ :dob => :asc}).first %>
+
+The eldest director in our dataset right now is <%= eldest_director.name %>, born on <%= eldest_director.dob.strftime("%B %u, %Y")%>.
